@@ -61,7 +61,7 @@ shape_config = {
     # THUMB PARAMETERS
     ##############################
 
-    # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ'
+    # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'PALM_KEY' 4 thumbs, 1 palm, 1 extra (can be used for rotary encoder)
     'thumb_style': 'DEFAULT',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
@@ -457,6 +457,8 @@ shape_config = {
     ## COLUMN OFFSETS
     ####################################
 
+    # Use these for most layouts of 6 columns or less
+    
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
@@ -466,6 +468,19 @@ shape_config = {
         [0, -6, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
+    
+    # This was useful for 7 columns where I wanted the extra column to be medial (index finger) rather than lateral (pinky)
+    
+    #    'column_offsets':  [
+    #    [0, 0, 0],
+    #    [0, 0, 0],
+    #    [0, 0, 0],
+    #    [0, 2.82, -4.5],
+    #    [0, 1.41, -2.25], #[0, 0, 0] originally
+    #    [0, -6, 5],# REDUCED STAGGER
+    #    [0, -6, 5],# REDUCED STAGGER
+    #    #[0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
+    #],
 
 }
 
