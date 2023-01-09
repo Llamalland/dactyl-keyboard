@@ -21,16 +21,16 @@ shape_config = {
     'save_dir': '.',
     'config_name':  "DM",
 
-    'show_caps': 'MX',
+    'show_caps': False,
     'show_pcbs': False, #only runs if caps are shown, easist place to initially inject geometry
 
-    'nrows':  5, #5,  # key rows
-    'ncols':  6, #6,  # key columns
+    'nrows':  4, #5,  # key rows
+    'ncols':  7, #6,  # key columns
 
     'alpha':  pi / 12.0,  # curvature of the columns
     'beta':  pi / 36.0,  # curvature of the rows
     'centercol':  3,  # controls left_right tilt / tenting (higher number is more tenting)
-    'centerrow_offset':  3,  # rows from max, controls front_back tilt
+    'centerrow_offset':  3.5,  # rows from max, controls front_back tilt
     'tenting_angle':  pi / 12.0,  # or, change this for more precise tenting control
 
     # symmetry states if it is a symmetric or asymmetric bui.  If asymmetric it doubles the generation time.
@@ -38,18 +38,18 @@ shape_config = {
 
     'column_style_gt5':  "orthographic",
     'column_style':  "standard",  # options include :standard, :orthographic, and :fixed
-    'reduced_inner_cols': 2,  #currently supports 0 or 2 due to thumb cluster attachment
+    'reduced_inner_cols': 0,  #currently supports 0 or 2 due to thumb cluster attachment
     'reduced_outer_cols': 0,
 
 
-    'thumb_offsets':  [6, -3, 7],
+    'thumb_offsets':  [10, 3, -8], #original [6, -3, 7]
     'keyboard_z_offset':  (
-        11  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
+        12  # controls overall height# original=9 with centercol=3# use 16 for centercol=2
     ),
 
 
-    'extra_width': 2.5,  # extra space between the base of keys# original= 2
-    'extra_height': 1.0,  # original= 0.5
+    'extra_width': 1.5,  # extra space between the base of keys# original= 2 or 2.5
+    'extra_height': 0.5,  # original= 0.5 or 1.0
 
 
     'web_thickness': 4.0 + 1.1,
@@ -61,11 +61,11 @@ shape_config = {
     # THUMB PARAMETERS
     ##############################
 
-    # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ', 'PALM_KEY' 4 thumbs, 1 palm, 1 extra (can be used for rotary encoder)
+    # 'DEFAULT' 6-key, 'MINI' 5-key, 'CARBONFET' 6-key, 'MINIDOX' 3-key, 'TRACKBALL_ORBYL', 'TRACKBALL_CJ'
     'thumb_style': 'DEFAULT',
     'default_1U_cluster': True, # only used with default, makes top right thumb cluster key 1U
     # Thumb key size.  May need slight oversizing, check w/ caps.  Additional spacing will be automatically added for larger keys.
-    'minidox_Usize': 1.6,
+    'minidox_Usize': 1,
     # Thumb plate rotations, anything other than 90 degree increments WILL NOT WORK.
 
     'mini_index_key': True,
@@ -73,8 +73,8 @@ shape_config = {
     # Screw locations and extra screw locations for separable thumb, all from thumb origin
     # Pulled out of hardcoding as drastic changes to the geometry may require fixes to the screw mounts.
     # First screw in separable should be similar to the standard location as it will receive the same modifiers.
-    'default_thumb_screw_xy_locations': [[-21, -58]],
-    'default_separable_thumb_screw_xy_locations': [[-21, -58]],
+    'default_thumb_screw_xy_locations': [[-42, -63]], #-21-58
+    'default_separable_thumb_screw_xy_locations': [[-42, -63]],
     'mini_thumb_screw_xy_locations': [[-29, -52]],
     'mini_separable_thumb_screw_xy_locations': [[-29, -52], [-62, 10], [12, -25]],
     'minidox_thumb_screw_xy_locations': [[-37, -34]],
@@ -87,11 +87,11 @@ shape_config = {
     'tbcj_separable_thumb_screw_xy_locations': [[-40, -75], [-63, 10], [15, -40]],
 
     'thumb_plate_tr_rotation': 0.0,  # Top right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
-    'thumb_plate_tl_rotation': 0.0,  # Top left plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
-    'thumb_plate_mr_rotation': 0.0,  # Mid right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
-    'thumb_plate_ml_rotation': 0.0,  # Mid left plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
-    'thumb_plate_br_rotation': 0.0,  # Bottom right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
-    'thumb_plate_bl_rotation': 0.0,  # Bottom right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
+    'thumb_plate_tl_rotation': 90,  # Top left plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
+    'thumb_plate_mr_rotation': 90,  # Mid right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
+    'thumb_plate_ml_rotation': 90,  # Mid left plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
+    'thumb_plate_br_rotation': 90,  # Bottom right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
+    'thumb_plate_bl_rotation': 90,  # Bottom right plate rotation tweaks as thumb cluster is crowded for hot swap, etc.
     ##############################
     # EXPERIMENTAL
     'separable_thumb': False,  #creates a separable thumb section with additional screws to hold it down.  Only attached at base.
@@ -235,8 +235,8 @@ shape_config = {
     # 'HS_NUB' = hot swap underside with nubs.
     # 'HS_UNDERCUT' = hot swap underside with undercut. Does not generate properly.  Hot swap step needs to be modified.
     # 'HS_NOTCH' = hot swap underside with notch.  Does not generate properly.  Hot swap step needs to be modified.
-    # 'plate_style':  'NUB',
-    'plate_style': 'NOTCH',
+    # 'plate_style':  'HS_UNDERCUT',
+    'plate_style': 'HS_NOTCH',
 
     'hole_keyswitch_height':  14.0,
     'hole_keyswitch_width':  14.0,
@@ -273,7 +273,7 @@ shape_config = {
     # 'SLIDING' = Features to slide the OLED in place and use a pin or block to secure from underneath.
     # 'CLIP' = Features to set the OLED in a frame a snap a bezel down to hold it in place.
 
-    'oled_mount_type':  'CLIP',
+    'oled_mount_type':  'NONE',
     'oled_center_row': 1.25, # if not None, this will override the oled_mount_location_xyz and oled_mount_rotation_xyz settings
     'oled_translation_offset': (0, 0, 4), # Z offset tweaks are expected depending on curvature and OLED mount choice.
     'oled_rotation_offset': (0, 0, 0),
@@ -457,30 +457,16 @@ shape_config = {
     ## COLUMN OFFSETS
     ####################################
 
-    # Use these for most layouts of 6 columns or less
-    
     'column_offsets':  [
         [0, 0, 0],
         [0, 0, 0],
-        [0, 2.82, -4.5],
         [0, 0, 0],
+        [0, 2.82, -4.5],
+        [0, 1.41, -2.25], #[0, 0, 0] originally
         [0, -6, 5],# REDUCED STAGGER
         [0, -6, 5],# REDUCED STAGGER
-        [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
+        #[0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
-    
-    # This was useful for 7 columns where I wanted the extra column to be medial (index finger) rather than lateral (pinky)
-    
-    #    'column_offsets':  [
-    #    [0, 0, 0],
-    #    [0, 0, 0],
-    #    [0, 0, 0],
-    #    [0, 2.82, -4.5],
-    #    [0, 1.41, -2.25], #[0, 0, 0] originally
-    #    [0, -6, 5],# REDUCED STAGGER
-    #    [0, -6, 5],# REDUCED STAGGER
-    #    #[0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
-    #],
 
 }
 
