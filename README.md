@@ -1,4 +1,17 @@
 # The Dactyl-ManuForm Keyboard - Python 3 - Cadquery
+
+This is a hack job of a fork of the below. I wanted to change a couple of things:
+
+1: To make a thumb cluster and palm key reminiscent of keyboardio model 01 and model 100. An extra key slot I will use for a rotary encoder. I did the bare minimum to create this, it's just a mangling of the default thumb layout. Note that normal keycaps would require some filing to fit on the thumb keys, or would need to be printed from scratch if you're into that. I was lucky enough to have some spares from keyboardio that didn't need modification.
+
+2: In normal layouts when you choose more than 6 columns, the extra columns go lateral, to the pinky side. I made them go medial, for index finger use. Again, this was influenced by keyboardio. I did this by changing the column offsets. There's almost certainly a better, more programmatic way to do this so people could just choose an option and bam! I just can't be bothered.
+
+3: I thought there was something else, I'll update this if I think of it.
+
+I decided not to make this as a pull request because I can't be bothered to make the code decent and proper and as it is, it replaced the default thumb cluster as an option. I also don't know whether people want added complication to an already complicated system for something that maybe only I really want. But if anyone can be bothered to pretty it up, you'd be more than welcome to merge my thumb cluster especially into the mix!
+
+Below is all previous authors' work:
+
 This is a fork of [Dactyl-Manuform](https://github.com/tshort/dactyl-keyboard) by Tom Short, which itself is a fork of [Dactyl](https://github.com/adereth/dactyl-keyboard) by Matthew Adereth, a parameterized, split-hand, concave, columnar, ergonomic keyboard.
 
 While the code structure remains comparable to the original, Clojure and OpenSCAD have been replaced by Python and cadquery/OpenCASCADE.  The predecessors were exceptional contributions to the ergo keyboard community by the authors but used a rather esoteric programming language, Clojure, and a relatively inconsistent geometry engine, OpenSCAD.  My hope is that by converting the code the community will have an easier time modifying and evolving this design.  
