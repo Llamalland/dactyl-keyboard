@@ -466,6 +466,17 @@ shape_config = {
         [0, -6, 5],# REDUCED STAGGER
         [0, -6, 5],# NOT USED IN MOST FORMATS (7th column)
     ],
+# Alternative column offsets if you use a 7th column and want it medial (index finger) rather than lateral (pinky):
+
+#    'column_offsets':  [
+         [0, 0, 0], 
+#        [0, 0, 0],
+#        [0, 0, 0],
+#        [0, 2.82, -4.5],
+#        [0, 0, 0],
+#        [0, -6, 5],# REDUCED STAGGER
+#        [0, -6, 5],# REDUCED STAGGER
+#    ],
 
 }
 
