@@ -714,51 +714,54 @@ def thumborigin():
 
     return origin
 
-
+#3
 def default_thumb_tl_place(shape):
     debugprint('thumb_tl_place()')
-    shape = rotate(shape, [7.5, -18, 10])
+    shape = rotate(shape, [10, -24, 31])
+    shape = rotate(shape, [-3, 0, 10])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-32.5, -14.5, -2.5])
+    shape = translate(shape, [-26.7, -22.7, -3])
     return shape
 
-
+#4
 def default_thumb_tr_place(shape):
     debugprint('thumb_tr_place()')
-    shape = rotate(shape, [10, -15, 10])
+    shape = rotate(shape, [10, -24, 31])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-12, -16, 3])
+    shape = translate(shape, [-13, -13, 5])
     return shape
-
+#palm
 def default_thumb_mr_place(shape):
     debugprint('thumb_mr_place()')
-    shape = rotate(shape, [-6, -34, 48])
+    shape = rotate(shape, [30, -27, 49]) 
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-29, -40, -13])
+    shape = translate(shape, [0, -55, -20]) #[-5, -50, -20]
     return shape
 
-
+#2
 def default_thumb_ml_place(shape):
     debugprint('thumb_ml_place()')
-    shape = rotate(shape, [6, -34, 40])
+    shape = rotate(shape, [10, -24, 31])
+    shape = rotate(shape, [-6, 0, 20])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-51, -25, -12])
+    shape = translate(shape, [-39, -35, -10])
     return shape
 
-
+#misc
 def default_thumb_br_place(shape):
     debugprint('thumb_br_place()')
-    shape = rotate(shape, [-16, -33, 54])
+    shape = rotate(shape, [45, 0, 0]) #[30, -27, 49]
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-37.8, -55.3, -25.3])
+    shape = translate(shape, [-25, -65, -25]) #[-5, -50, -20]
     return shape
 
-
+#1
 def default_thumb_bl_place(shape):
     debugprint('thumb_bl_place()')
-    shape = rotate(shape, [-4, -35, 52])
+    shape = rotate(shape, [10, -24, 31])
+    shape = rotate(shape, [-9, 0, 30])
     shape = translate(shape, thumborigin())
-    shape = translate(shape, [-56.3, -43.3, -23.5])
+    shape = translate(shape, [-48, -49, -17]) #[-50, -48, -21]
     return shape
 
 
